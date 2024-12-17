@@ -35,7 +35,8 @@ let elipse2 : Ejes = {
 }
 
 const actualizaElipsis = (elipsis : Ejes) => {
-
+	elipsis.ancho = window.innerWidth * (2/3);
+	elipsis.ancho = window.innerHeight * (2/3);
 }
 
 onMount(() => {
@@ -45,17 +46,19 @@ onMount(() => {
 	window.addEventListener("resize", clojureTamanyo); //Escucha cambios de tamaño
 
 	const clojureElipse1 = () => actualizaElipsis(elipse1);
+	window.addEventListener("resize", clojureElipse1);
+
 	const clojureElipse2 = () => actualizaElipsis(elipse2);
+	window.addEventListener("resize", clojureElipse2);
 
 	return () => {
 		window.removeEventListener("resize", clojureTamanyo); // Limpia el listener al destruir
+		window.addEventListener("resize", clojureElipse1);
+		window.addEventListener("resize", clojureElipse2);
 	};
 });
 
 // ----------------------------------
-
-let elipsisMenor = [];
-let elipsisMayor = [];
 
 
 
