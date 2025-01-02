@@ -2,60 +2,65 @@
 // ---------------------------------
 import '../app.css';
 import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+import { onMount } from "svelte";
 let { children } = $props();
 
-// ------------------------------------------------------------------------- //
-// Lógica de toma de tamaño de pantalla para posteriores cálculos de elipses //
-// ------------------------------------------------------------------------- //
-import { onMount } from "svelte";
+// ------------------------------------------------ //
+// Screen size object for later elypse calculations //
+// ------------------------------------------------ //
 
-type Ejes = {
-	ancho: number;
-	alto: number;
+type Axes = {
+	width : number;
+	height : number;
 };
 
-let pantalla : Ejes = {
-	ancho: 0,
-	alto: 0
+let screen : Axes = {
+	width : 0,
+	height : 0
 };
 
-const actualizaTamanyo = (pantalla : Ejes) => { // clojure que actualiza width y height con las dimensiones de pantalla
-	pantalla.ancho = window.innerWidth;
-	pantalla.ancho = window.innerHeight;
+const updateScreen = (screen : Axes) => {
+	screen.width = window.innerWidth;
+	screen.height = window.innerHeight;
 };
 
-let elipse1 : Ejes = {
-	ancho: 0,
-	alto: 0
+// -------------------------------- //
+// Elypse definition & calculations //
+// -------------------------------- //
+
+class Elypse {
+    screenReference : Axes;
+    proportion : number;
+
+    constructor (screenReference : Axes, proportion : number) {
+        this.screenReference = screenReference;
+        this.proportion = proportion;
+    }
+
+    static factory (screenReference : Axes, proportion : number) : Elypse {
+        return new Elypse(screenReference, proportion);
+    }
+
+	get majorRadius() : number { return Math.max(this.screenReference.width, this.screenReference.height) * this.proportion / 2; }
+	get minorRadius() : number { return Math.min(this.screenReference.width, this.screenReference.height) * this.proportion / 2; }
+
+	
+
 }
 
-let elipse2 : Ejes = {
-	ancho: 0,
-	alto: 0
-}
-
-const actualizaElipsis = (elipsis : Ejes) => {
-	elipsis.ancho = window.innerWidth * (2/3);
-	elipsis.ancho = window.innerHeight * (2/3);
-}
+let elypses : { [key: string]: Elypse } = { // preferred key-value storage for easier identification
+	"first" : Elypse.factory(screen, 2/3),
+	"second" : Elypse.factory(screen, 2/3)
+};
 
 onMount(() => {
-	actualizaTamanyo(pantalla); // Toma las dimensiones por primera vez
+	updateScreen(screen); // gets dimensions for the first time
 
-	const clojureTamanyo = () => actualizaTamanyo(pantalla);
-	window.addEventListener("resize", clojureTamanyo); //Escucha cambios de tamaño
+	const updateScreenSize = () => updateScreen(screen); // storing reference for listener deletion
 
-	const clojureElipse1 = () => actualizaElipsis(elipse1);
-	window.addEventListener("resize", clojureElipse1);
+	window.addEventListener("resize", updateScreenSize);
 
-	const clojureElipse2 = () => actualizaElipsis(elipse2);
-	window.addEventListener("resize", clojureElipse2);
-
-	return () => {
-		window.removeEventListener("resize", clojureTamanyo); // Limpia el listener al destruir
-		window.addEventListener("resize", clojureElipse1);
-		window.addEventListener("resize", clojureElipse2);
-	};
+	return () => window.removeEventListener("resize", updateScreenSize);
 });
 
 // ----------------------------------
@@ -63,21 +68,10 @@ onMount(() => {
 
 
 // ----------------------------------
-let estrellaMenor = [];
-let estrellaMayor = [];
+
 
 </script>
 
-
-<div class="absolute -z-10 w-screen h-screen gradiente-base">
-	<div class="z-0 rounded-full estrella-menor bg-red-400 absolute"></div>
-	<div class="z-0 rounded-full estrella-mayor bg-red-400 absolute"></div>
-
-	<div class="z-0 rounded-full estrella-media bg-amber-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-	<div class="z-10 rounded-full anillo bg-slate-700 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-
-	
-</div>
 
 
 <Navbar>
@@ -95,26 +89,6 @@ let estrellaMayor = [];
 </Navbar>
 
 <style>
-
-	.gradiente-base {
-		background-image: radial-gradient(#4E2552, #0E000E);
-	}
-
-	.estrella-menor {
-
-	}
-
-	.estrella-media {
-		
-	}
-
-	.estrella-mayor {
-		
-	}
-
-	.anillo {
-		
-	}
 
 </style>
 
