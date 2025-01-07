@@ -44,8 +44,8 @@ class Elypse {
         return new Elypse(screenReference, proportion);
     }
 
-	get majorAxisRadius() : number { return Math.max(this.screenReference.x, this.screenReference.y) * this.proportion / 2; }
-	get minorAxisRadius() : number { return Math.min(this.screenReference.x, this.screenReference.y) * this.proportion / 2; }
+	get majorAxisRadius() : number { return this.screenReference.x / 2;	}
+	get minorAxisRadius() : number { return (this.screenReference.x > this.screenReference.y) ? this.screenReference.y / 2 : this.screenReference.x / 2; }
 
 	updateTiltAngle() : number {
 		this.tiltAngle = (Math.acos(Math.min(this.screenReference.x , this.screenReference.y) / Math.max(this.screenReference.x , this.screenReference.y)) * 180) / Math.PI;
