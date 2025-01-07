@@ -10,18 +10,18 @@ let { children } = $props();
 // ------------------------------------------------ //
 
 type Axes = {
-	width : number;
-	height : number;
+	x : number; //horizontal axis
+	y : number; //vertical axis
 };
 
 let screen : Axes = {
-	width : 0,
-	height : 0
+	x : 0,
+	y : 0
 };
 
 const updateScreen = (screen : Axes) => {
-	screen.width = window.innerWidth;
-	screen.height = window.innerHeight;
+	screen.x = window.innerWidth;
+	screen.y = window.innerHeight;
 };
 
 // -------------------------------- //
@@ -31,18 +31,26 @@ const updateScreen = (screen : Axes) => {
 class Elypse {
     screenReference : Axes;
     proportion : number;
+	tiltAngle : number = 0;
+	boundElements: { element: HTMLElement; position: Axes }[] = [];
 
     constructor (screenReference : Axes, proportion : number) {
         this.screenReference = screenReference;
         this.proportion = proportion;
+		this.updateTiltAngle();
     }
 
     static factory (screenReference : Axes, proportion : number) : Elypse {
         return new Elypse(screenReference, proportion);
     }
 
-	get majorRadius() : number { return Math.max(this.screenReference.width, this.screenReference.height) * this.proportion / 2; }
-	get minorRadius() : number { return Math.min(this.screenReference.width, this.screenReference.height) * this.proportion / 2; }
+	get majorAxisRadius() : number { return Math.max(this.screenReference.x, this.screenReference.y) * this.proportion / 2; }
+	get minorAxisRadius() : number { return Math.min(this.screenReference.x, this.screenReference.y) * this.proportion / 2; }
+
+	updateTiltAngle() : number {
+		this.tiltAngle = (Math.acos(Math.min(this.screenReference.x , this.screenReference.y) / Math.max(this.screenReference.x , this.screenReference.y)) * 180) / Math.PI;
+		return this.tiltAngle;
+	}
 
 	
 
