@@ -1,86 +1,40 @@
 <script lang="ts">
-// ---------------------------------
-import '../app.css';
-import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-import { onMount } from "svelte";
-let { children } = $props();
+    import { onMount } from 'svelte';
+	import '../app.css';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+    import type { Axes } from '$lib/utils/Axes';
+    import { elypses } from '$lib/stores/global';
+	let { children } = $props();
 
-// ------------------------------------------------ //
-// Screen size object for later elypse calculations //
-// ------------------------------------------------ //
+	const updateScreen = (screen : Axes) => {
+		screen.x = window.innerWidth;
+		screen.y = window.innerHeight;
+	};
 
-type Axes = {
-	x : number; //horizontal axis
-	y : number; //vertical axis
-};
+	onMount(() => {
+		updateScreen(screenDimensions); // gets dimensions for the first time
 
-let screen : Axes = {
-	x : 0,
-	y : 0
-};
+		const updateScreenSize = () => updateScreen(screenDimensions);
+		window.addEventListener("resize", updateScreenSize); // listener updates stored screen size value on window resize
 
-const updateScreen = (screen : Axes) => {
-	screen.x = window.innerWidth;
-	screen.y = window.innerHeight;
-};
+		const updateElypses = () => { // modifies tilt angle of all elypses to take into account new screen size value
+			elypses.update(currentElypses => { // .update() allows access to current state for modification
+				Object.entries(currentElypses).forEach(([key, value]) => {
+					value.updateTiltAngle();
+				});
+			
+				return currentElypses; // returns modified object
+			});
+		};
+		window.addEventListener("resize", updateElypses);
 
-// -------------------------------- //
-// Elypse definition & calculations //
-// -------------------------------- //
-
-class Elypse {
-    screenReference : Axes;
-    proportion : number;
-	tiltAngle : number = 0;
-	boundElements: { element: HTMLElement; position: Axes }[] = [];
-
-    constructor (screenReference : Axes, proportion : number) {
-        this.screenReference = screenReference;
-        this.proportion = proportion;
-		this.updateTiltAngle();
-    }
-
-    static factory (screenReference : Axes, proportion : number) : Elypse {
-        return new Elypse(screenReference, proportion);
-    }
-
-	get majorAxisRadius() : number { return this.screenReference.x / 2;	}
-	get minorAxisRadius() : number { return (this.screenReference.x > this.screenReference.y) ? this.screenReference.y / 2 : this.screenReference.x / 2; }
-
-	updateTiltAngle() : number {
-		this.tiltAngle = (Math.acos(Math.min(this.screenReference.x , this.screenReference.y) / Math.max(this.screenReference.x , this.screenReference.y)) * 180) / Math.PI;
-		return this.tiltAngle;
-	}
-
-	
-
-}
-
-let elypses : { [key: string]: Elypse } = { // preferred key-value storage for easier identification
-	"first" : Elypse.factory(screen, 2/3),
-	"second" : Elypse.factory(screen, 2/3)
-};
-
-onMount(() => {
-	updateScreen(screen); // gets dimensions for the first time
-
-	const updateScreenSize = () => updateScreen(screen); // storing reference for listener deletion
-
-	window.addEventListener("resize", updateScreenSize);
-
-	return () => window.removeEventListener("resize", updateScreenSize);
-});
-
-// ----------------------------------
-
-
-
-// ----------------------------------
-
+		return () => { // listener removal
+			window.removeEventListener("resize", updateScreenSize);
+			window.removeEventListener("resize", updateElypses);
+		}
+	});
 
 </script>
-
-
 
 <Navbar>
 	<NavBrand href="/">
