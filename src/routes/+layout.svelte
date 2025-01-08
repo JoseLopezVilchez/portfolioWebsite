@@ -2,35 +2,19 @@
     import { onMount } from 'svelte';
 	import '../app.css';
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-    import type { Axes } from '$lib/utils/Axes';
-    import { elypses } from '$lib/stores/global';
+    import { screenDimensions } from '$lib/stores/global';
 	let { children } = $props();
 
-	const updateScreen = (screen : Axes) => {
-		screen.x = window.innerWidth;
-		screen.y = window.innerHeight;
-	};
-
 	onMount(() => {
-		updateScreen(screenDimensions); // gets dimensions for the first time
-
-		const updateScreenSize = () => updateScreen(screenDimensions);
-		window.addEventListener("resize", updateScreenSize); // listener updates stored screen size value on window resize
-
-		const updateElypses = () => { // modifies tilt angle of all elypses to take into account new screen size value
-			elypses.update(currentElypses => { // .update() allows access to current state for modification
-				Object.entries(currentElypses).forEach(([key, value]) => {
-					value.updateTiltAngle();
-				});
-			
-				return currentElypses; // returns modified object
-			});
+		
+		const updateScreen = () => {
+			screenDimensions.update(dimensions => { return { x : window.innerWidth, y : window.innerHeight}}); // .update() allows access to writables
 		};
-		window.addEventListener("resize", updateElypses);
+		updateScreen(); // gets dimensions for the first time
+		window.addEventListener("resize", updateScreen); // listener updates stored screen size value on window resize
 
 		return () => { // listener removal
-			window.removeEventListener("resize", updateScreenSize);
-			window.removeEventListener("resize", updateElypses);
+			window.removeEventListener("resize", updateScreen);
 		}
 	});
 

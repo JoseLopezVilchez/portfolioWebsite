@@ -1,27 +1,33 @@
 import type { SvelteComponent } from "svelte";
 import type { Axes } from "./Axes";
+import { screenDimensions } from "$lib/stores/global";
 
 export class Elypse {
-    screenReference : Axes;
+    screenReference : Axes = {x : 0, y : 0};
     proportion : number;
 	private tiltAngle : number = 0;
 	private boundElements : { [key: string] : {element : SvelteComponent; speed : number; position : number} } = {};
 	private animationId : number | null = null;
 
-    constructor (screenReference : Axes, proportion : number) {
-        this.screenReference = screenReference;
+    constructor (proportion : number) {
         this.proportion = proportion;
+
+        screenDimensions.subscribe(screen => { //subscribes to global and updates two attributes based off it
+            this.screenReference = screen;
+            this.updateTiltAngle();
+        });
+
 		this.updateTiltAngle();
     }
 
-    static factory (screenReference : Axes, proportion : number) : Elypse {
-        return new Elypse(screenReference, proportion);
+    static factory (proportion : number) : Elypse {
+        return new Elypse(proportion);
     }
 
 	get majorAxisRadius() : number { return this.screenReference.x * this.proportion / 2; }
 	get minorAxisRadius() : number { return (this.screenReference.x > this.screenReference.y) ? this.screenReference.y * this.proportion / 2 : this.screenReference.x * this.proportion / 2; }
 
-	updateTiltAngle() : number { return (Math.acos(this.minorAxisRadius / this.majorAxisRadius) * 180) / Math.PI; }
+	updateTiltAngle() { this.tiltAngle = Math.acos(this.minorAxisRadius / this.majorAxisRadius) * 180 / Math.PI; }
 
 	bindElement (newKey : string, newElement : SvelteComponent , newSpeed : number) {
 		this.boundElements[newKey] = {
