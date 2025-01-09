@@ -1,7 +1,7 @@
 <script lang="ts">
     import { elypses, screenDimensions } from "$lib/stores/global";
     import { Elypse } from "$lib/utils/Elypse";
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
 
     let { identifier = '', proportion, children } = $props();
 
@@ -16,9 +16,22 @@
         }
     });
 
+    onDestroy (() => { // removes associated elypse instance from store when this component is destroyed
+        elypses.update(currentElypses => {
+            if (identifier in currentElypses) {
+                delete currentElypses[identifier];
+                return { ...currentElypses};
+            }
+
+            return currentElypses;
+        });
+    });
+
 </script>
 
-
+<div>
+    {children}
+</div>
 
 <style>
 
