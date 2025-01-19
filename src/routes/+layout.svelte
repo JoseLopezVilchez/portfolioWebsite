@@ -16,7 +16,7 @@
 
 		return () => { // listener removal
 			window.removeEventListener("resize", updateScreen);
-		}
+		};
 	});
 
 </script>
