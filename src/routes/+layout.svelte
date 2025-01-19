@@ -1,8 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 	import '../app.css';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
     import { screenDimensions } from '$lib/stores/global';
+    import { Footer, FooterIcon } from 'flowbite-svelte';
+	import { GithubSolid, DiscordSolid, TwitterSolid, LinkedinSolid } from 'flowbite-svelte-icons';
 	let { children } = $props();
 
 	onMount(() => {
@@ -20,22 +21,16 @@
 
 </script>
 
-<Navbar>
-	<NavBrand href="/">
-	  <img src="https://pixelz.cc/wp-content/uploads/2018/08/stock-market-electronic-chart-bullish-uhd-4k-wallpaper.jpg" class="me-3 h-6 sm:h-9" alt="Logo"/>
-	  <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Inicio</span>
-	</NavBrand>
-	<NavHamburger></NavHamburger>
-	<NavUl>
-	  <NavLi href="/demos">Demostraciones</NavLi>
-	  <NavLi href="/repos">Repositorios</NavLi>
-	  <NavLi href="">Blog</NavLi>
-	  <NavLi href="/contact">Contacto</NavLi>
-	</NavUl>
-</Navbar>
-
-<style>
-
-</style>
-
 {@render children()}
+
+<Footer class="flex justify-center self-center h-max p-2 bg-black">
+	<FooterIcon href="/">
+		<DiscordSolid class="w-8 h-8 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+	</FooterIcon>
+	<FooterIcon href="/">
+		<GithubSolid class="w-8 h-8 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+	</FooterIcon>
+	<FooterIcon href="/">
+		<LinkedinSolid class="w-8 h-8 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+	</FooterIcon>
+</Footer>
