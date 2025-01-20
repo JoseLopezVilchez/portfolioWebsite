@@ -1,13 +1,12 @@
 <script lang="ts">
+
     import { onMount } from 'svelte';
 	import '../app.css';
     import { screenDimensions } from '$lib/stores/global';
     import { Footer, FooterIcon } from 'flowbite-svelte';
-	import { GithubSolid, DiscordSolid, TwitterSolid, LinkedinSolid } from 'flowbite-svelte-icons';
-    import ElypseUi from '$lib/components/ElypseUI.svelte';
-	let { children } = $props();
+	import { GithubSolid, DiscordSolid, LinkedinSolid } from 'flowbite-svelte-icons';
 
-	let proportion = 2/3;
+	let { children } = $props();
 
 	onMount(() => {
 		
@@ -26,7 +25,7 @@
 
 <div class="backgroundGradient fixed inset-0"> <!-- Background, fixed in place -->
 
-	<!--
+	<!-- to be done
 	<div> 
 		<ElypseUi proportion={proportion} identifier="unica">
 			<div class="rounded-full elypseGradient"></div>
