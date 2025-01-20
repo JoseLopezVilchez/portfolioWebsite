@@ -19,7 +19,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: 'joselopezvilchez.github.io/portfolioWebsite',
+			base: '/joselopezvilchez.github.io/portfolioWebsite',
 		},
 		
 	}
