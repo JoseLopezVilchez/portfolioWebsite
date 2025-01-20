@@ -50,51 +50,52 @@
 
             <div class="w-full grid gap-2 lg:gap-4 grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 auto-rows-auto bg-violet-950/80 rounded-lg">
 
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${englishLogo})`}></div>
+                <!-- I should've made a component for this, any change I make requires me to alter EVERY SINGLE ONE OF THESE -->
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${englishLogo})`}></div>
                 <Tooltip class="p-4">C1 English level, 199 points grade, certified by Cambridge Language Assessment</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${htmlLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${htmlLogo})`}></div>
                 <Tooltip class="p-4">Html</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${cssLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${cssLogo})`}></div>
                 <Tooltip class="p-4">Css</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${tailwindLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${tailwindLogo})`}></div>
                 <Tooltip class="p-4">Tailwind</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${flowbiteLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${flowbiteLogo})`}></div>
                 <Tooltip class="p-4">Flowbite, a UI component library</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${javaScriptLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${javaScriptLogo})`}></div>
                 <Tooltip class="p-4">JavaScript</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${typeScriptLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${typeScriptLogo})`}></div>
                 <Tooltip class="p-4">TypeScript</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${svelteLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${svelteLogo})`}></div>
                 <Tooltip class="p-4">Svelte</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${reactLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${reactLogo})`}></div>
                 <Tooltip class="p-4">React</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${javaLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${javaLogo})`}></div>
                 <Tooltip class="p-4">Java</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${kotlinLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${kotlinLogo})`}></div>
                 <Tooltip class="p-4">Kotlin</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${androidLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${androidLogo})`}></div>
                 <Tooltip class="p-4">Android development</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${swiftLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${swiftLogo})`}></div>
                 <Tooltip class="p-4">Swift</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${iosLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${iosLogo})`}></div>
                 <Tooltip class="p-4">iOS development</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${phpLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${phpLogo})`}></div>
                 <Tooltip class="p-4">Php</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${laravelLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${laravelLogo})`}></div>
                 <Tooltip class="p-4">Laravel</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${rustLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${rustLogo})`}></div>
                 <Tooltip class="p-4">Rust</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${slintLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${slintLogo})`}></div>
                 <Tooltip class="p-4">Slint, a UI library for Rust</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${mysqlLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${mysqlLogo})`}></div>
                 <Tooltip class="p-4">MySQL</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${mariadbLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${mariadbLogo})`}></div>
                 <Tooltip class="p-4">MariaDB</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${debianLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${debianLogo})`}></div>
                 <Tooltip class="p-4">Debian, a linux distro</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${qemuLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${qemuLogo})`}></div>
                 <Tooltip class="p-4">QEMU/KVM, a virtualization program</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain" style={`background-image: url(${gitLogo})`}></div>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${gitLogo})`}></div>
                 <Tooltip class="p-4">Git</Tooltip>
                                 
             </div>
