@@ -21,7 +21,7 @@ const config = {
 		paths: {
 			base: '/JoseLopezVilchez.github.io',
 		},
-		trailingSlash: 'always',
+		
 	}
 };
 
