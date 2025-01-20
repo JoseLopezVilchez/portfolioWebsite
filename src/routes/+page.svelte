@@ -50,51 +50,51 @@
 
             <div class="w-full grid gap-2 lg:gap-4 grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 auto-rows-auto bg-violet-950/80 rounded-lg">
 
-                <img src={englishLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${englishLogo})`}></div>
                 <Tooltip class="p-4">C1 English level, 199 points grade, certified by Cambridge Language Assessment</Tooltip>
-                <img src={htmlLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${htmlLogo})`}></div>
                 <Tooltip class="p-4">Html</Tooltip>
-                <img src={cssLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${cssLogo})`}></div>
                 <Tooltip class="p-4">Css</Tooltip>
-                <img src={tailwindLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${tailwindLogo})`}></div>
                 <Tooltip class="p-4">Tailwind</Tooltip>
-                <img src={flowbiteLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${flowbiteLogo})`}></div>
                 <Tooltip class="p-4">Flowbite, a UI component library</Tooltip>
-                <img src={javaScriptLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${javaScriptLogo})`}></div>
                 <Tooltip class="p-4">JavaScript</Tooltip>
-                <img src={typeScriptLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${typeScriptLogo})`}></div>
                 <Tooltip class="p-4">TypeScript</Tooltip>
-                <img src={svelteLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${svelteLogo})`}></div>
                 <Tooltip class="p-4">Svelte</Tooltip>
-                <img src={reactLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${reactLogo})`}></div>
                 <Tooltip class="p-4">React</Tooltip>
-                <img src={javaLogo} class="rounded-lg aspect-square p-4" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${javaLogo})`}></div>
                 <Tooltip class="p-4">Java</Tooltip>
-                <img src={kotlinLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${kotlinLogo})`}></div>
                 <Tooltip class="p-4">Kotlin</Tooltip>
-                <img src={androidLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${androidLogo})`}></div>
                 <Tooltip class="p-4">Android development</Tooltip>
-                <img src={swiftLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${swiftLogo})`}></div>
                 <Tooltip class="p-4">Swift</Tooltip>
-                <img src={iosLogo} class="rounded-lg aspect-square p-4" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${iosLogo})`}></div>
                 <Tooltip class="p-4">iOS development</Tooltip>
-                <img src={phpLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${phpLogo})`}></div>
                 <Tooltip class="p-4">Php</Tooltip>
-                <img src={laravelLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${laravelLogo})`}></div>
                 <Tooltip class="p-4">Laravel</Tooltip>
-                <img src={rustLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${rustLogo})`}></div>
                 <Tooltip class="p-4">Rust</Tooltip>
-                <img src={slintLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${slintLogo})`}></div>
                 <Tooltip class="p-4">Slint, a UI library for Rust</Tooltip>
-                <img src={mysqlLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${mysqlLogo})`}></div>
                 <Tooltip class="p-4">MySQL</Tooltip>
-                <img src={mariadbLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${mariadbLogo})`}></div>
                 <Tooltip class="p-4">MariaDB</Tooltip>
-                <img src={debianLogo} class="rounded-lg aspect-square p-4" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${debianLogo})`}></div>
                 <Tooltip class="p-4">Debian, a linux distro</Tooltip>
-                <img src={qemuLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${qemuLogo})`}></div>
                 <Tooltip class="p-4">QEMU/KVM, a virtualization program</Tooltip>
-                <img src={gitLogo} class="rounded-lg aspect-square p-2" alt=""/>
+                <div class="rounded-lg aspect-square p-2 bg-center bg-cover" style={`background-image: url(${gitLogo})`}></div>
                 <Tooltip class="p-4">Git</Tooltip>
                                 
             </div>
