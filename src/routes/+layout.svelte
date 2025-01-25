@@ -54,15 +54,22 @@
 
 <style>
 	.backgroundGradient {
-		background: radial-gradient(circle,
+		/*background: radial-gradient(circle,
 		rgba(14, 0, 14, 1) 0%,
-		rgba(14, 0, 14, 1) 1%, /*Solid dot*/
+		rgba(14, 0, 14, 1) 1%,
 		rgb(61, 27, 65) 2%,
-		rgb(77, 32, 82) 3%, /*Ring*/
+		rgb(77, 32, 82) 3%,
 		rgb(0, 0, 0) 4%,
 		rgb(42, 27, 65) 5%,
-		rgb(15, 1, 20) 25%, /*Soft fade*/
+		rgb(15, 1, 20) 25%,
 		rgb(0, 0, 0) 40%
+		);*/
+
+		background: radial-gradient(circle,
+		rgb(6, 0, 29) 0%,
+		rgb(0, 0, 0) 40%,
+		rgb(13, 0, 36) 50%,
+		rgb(0, 0, 0) 70%
 		);
 	}
 

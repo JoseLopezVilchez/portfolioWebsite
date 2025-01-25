@@ -1,29 +1,34 @@
 # Greetings!
 
-Here's my soon-to-be personal web portfolio. It's not done yet, since I bit off far more than I could chew (as I usually do) and ended up reaching the deadline without having anything (visual) to show for my effort. I have progressed a great deal, but it's all in code right now. So come have a look!
+Here's my personal web portfolio. It's not quite fully done yet, as it's still missing an elypse component I'm working on which SHOULD, once finished, animate components injected into it and have them travel along an elyptic trajectory which should also match the border of a rounded container by having it self-calculate the tilt angle it needs for such. Check out my progress on /src/lib/ and wish me luck!
 
 ## To check out this project
 
-You'll need to have node installed. Once you do, navigate to the root folder and run the following:
+Just go to [this link](https://joselopezvilchez.github.io/portfolioWebsite/) or, alternatively, clone this repo locally and run it yourself.
+
+You'll need to have node installed for the latter. Once you do, navigate to the root folder and run the following:
 
 ```bash
 npm i
+```
+
+To install the required dependencies, then run the following afterwards:
+
+```bash
 npm run dev
 ```
 
-There's currently nothing to show, however, so don't be alarmed when all it shows is a blank page.
+To run a local dev instance.
 
 ## Building
 
 To create a production version, run:
 
 ```bash
-npm run build
+npm run gh-pages
 ```
 
 You can preview the production build with `npm run preview`.
-
-However, this will have to wait for now.
 
 ## My goal
 
@@ -47,7 +52,7 @@ Focus on src and what's within it. Ignore the rest, it's just scaffolding, confi
     - **index.ts** : scaffolding, used to hold import statements.
 - **routes** : contains the visible structure of a webpage. Each folder has its own +page file which can be used for routing. I didn't need to add any, however.
     - **+layout.svelte** : contains whichever elements should be shared by all pages. I've added a listener there to keep track of the user's window size for calculations on other areas.
-    - **+page.svelte** : contains the page itself. Currently empty.
+    - **+page.svelte** : contains the page itself.
 - **app.css** : scaffolding.
 - **app.d.ts** : scaffolding.
 - **app.html** : scaffolding.
@@ -104,9 +109,9 @@ Nietzschean, libertarian, objectivist, materialist, anti-idealist & realist.
 ## Quirks
 
 - I don't drink, don't smoke, don't do drugs, do diet and exercise.
-- Thirst for improvement, learning and intellectual stimulation. It's not a positive trait so much as it is a quirk, as it's **double-edged**. This repo is proof of such. Keep this in mind, as it can make me an insanely good pick for some projects, and a poor choice for others.
+- Thirst for improvement, learning and intellectual stimulation. It's not a positive trait so much as it is a quirk, as it's **double-edged**. Keep this in mind, as it can make me an insanely good pick for some projects, and a poor choice for others.
 - Most people's topics tend to bore me.
-- Admittedly, I'm not the best at **designing** aesthetically pleasing graphical user interfaces, though I can code them just fine. I'm slowly getting better, however. 
+- Admittedly, I'm not the best at **designing** aesthetically pleasing graphical user interfaces, though I can code them just fine. I'm slowly getting better, however.
 
 ## Other repos
 
