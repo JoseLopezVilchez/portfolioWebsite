@@ -1,5 +1,5 @@
 <script>
-    import { Heading, Li, List, Tooltip } from "flowbite-svelte";
+    import { Button, Heading, Li, List, Tooltip } from "flowbite-svelte";
     import androidLogo from "$lib/resources/android-logo.png";
     import cssLogo from "$lib/resources/css-logo.png";
     import debianLogo from "$lib/resources/debian-logo.png";
@@ -36,7 +36,8 @@
 
             <div class="flex flex-col h-fit justify-self-center self-center">
                 <h1 class="text-center font-sans text-4xl lg:text-6xl xl:text-8xl font-bold text-white mb-2">José López Vílchez</h1>
-                <sub class="text-center font-sans text-base lg:text-lg xl:text-xl 2xl:text-2xl font-light text-white mb-8 lg:mb-16 ">FullStack Developer</sub>
+                <sub class="text-center font-sans text-base lg:text-lg xl:text-xl 2xl:text-2xl font-light text-white mb-8 lg:mb-16 pb-4">FullStack Developer</sub>
+                <Button outline color="purple">Download CV</Button>
             </div>
 
         </article>
@@ -44,11 +45,11 @@
         <article class="col-span-full w-full mb-4 lg:mb-16 flex flex-col lg:flex-row rounded-lg p-4 lg:p-8 border-solid border-x-2 border-white">
 
             <div class="w-full mb-8 lg:mb-16">
-                <h1 class="text-center font-sans text-4xl lg:text-6xl xl:text-8xl font-bold text-white">Skills</h1>
-                <p class="text-center font-sans text-base lg:text-lg xl:text-xl 2xl:text-2xl font-light text-white">Most were taught to me, though there's a few I taught myself. After a certain point, you can draw parallels from what you already know to hasten the learning process of new technologies.</p>
+                <h1 class="text-center lg:text-left font-sans text-xl lg:text-2xl xl:text-4xl 2xl:text-6xl font-bold text-white pb-4">Skills</h1>
+                <p class="text-center lg:text-left font-sans text-base lg:text-lg xl:text-xl 2xl:text-2xl font-light text-white">Most were taught to me, though there's a few I taught myself. After a certain point, you can draw parallels from what you already know to hasten the learning process of new technologies.</p>
             </div>
 
-            <div class="p-4 w-full grid gap-2 lg:gap-4 grid-cols-4 2xl:grid-cols-8 auto-rows-auto">
+            <div class="p-4 w-full grid gap-2 lg:gap-4 grid-cols-6 lg:grid-cols-4 2xl:grid-cols-8 auto-rows-auto">
 
                 <!-- I should've made a component for this, any change I make requires me to alter EVERY SINGLE ONE OF THESE -->
                 <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${englishLogo})`}></div>
