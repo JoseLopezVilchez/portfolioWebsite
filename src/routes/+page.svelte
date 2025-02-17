@@ -101,7 +101,6 @@
                 <Tooltip class="p-4">MariaDB</Tooltip>
                 <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${debianLogo})`}></div>
                 <Tooltip class="p-4">Debian, a linux distro - I straight up installed it on my main PC to get used to it. Screw windows!</Tooltip>
-                <div class="rounded-lg aspect-square p-2 bg-center bg-contain bg-no-repeat" style={`background-image: url(${qemuLogo})`}></div>
                                 
             </div>
 
